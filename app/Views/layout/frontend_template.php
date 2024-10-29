@@ -65,16 +65,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-         <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Products
-  </a>
-  <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-    <li><a class="dropdown-item" href="<?= base_url('service') ?>">Services</a></li>
-    <li><a class="dropdown-item" href="https://lifemedia.id/" target="_blank">Life Media</a></li>
-    <li><a class="dropdown-item" href="https://www.sportlinknews.com/" target="_blank">Sportlinknews</a></li>
-  </ul>
-</li>
+
+    <li class="nav-item"><a class="nav-link" href="<?= base_url('service') ?>">Product</a></li>
+ 
           <li class="nav-item">
             <a class="nav-link" href="<?= base_url('experience') ?>">Experiences</a>
           </li>
