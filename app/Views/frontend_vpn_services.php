@@ -1,249 +1,369 @@
-<!DOCTYPE html>
-<html lang="en">
+<?= $this->extend('layout/frontend_template') ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VPN Service</title>
-    <style>
-        /* Main Styles */
-        body {
-            font-family: 'Lato', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1a1a1a;
-            color: white;
-        }
+<?= $this->section('style') ?>
+<style>
+    /* Main Styles */
+    body {
+        overflow-x: hidden;
+    }
 
-        .vpn-section {
-            padding: 60px;
-            background-color: #262626;
-            text-align: center;
-        }
+    .hero {
+        background-image: url('<?= base_url('assets/img/vpn.png') ?>');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        position: relative;
+    }
 
-        .vpn-title {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            color: #00b8d4;
-        }
+    .hero a {
+        padding: 12px 30px;
+        background-color: #fff;
+        color: #000;
+        text-decoration: none;
+        font-size: 18px;
+        border-radius: 5px;
+    }
 
-        .vpn-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
-            color: #ccc;
-        }
+    .hero::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 
-        .features-container {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 60px;
-        }
+    .hero-content {
+        position: relative;
+        z-index: 1;
+    }
 
-        .feature-box {
-            background-color: #333;
-            border-radius: 10px;
-            padding: 20px;
-            width: 30%;
-        }
+    .hero .btn {
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        padding: 0.75rem 2rem;
+        text-transform: uppercase;
+    }
 
-        .feature-box h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #00b8d4;
-        }
+    .hero .btn:hover {
+        background-color: #0056b3;
+    }
 
-        .feature-box p {
-            font-size: 1rem;
-            color: #ccc;
-        }
 
-        .package-container {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 60px;
-        }
 
-        .package-box {
-            background-color: #333;
-            border-radius: 10px;
-            padding: 20px;
-            width: 30%;
-            text-align: center;
-        }
+    .vpn-section {
+        padding: 60px;
+        background-color: #262626;
+        text-align: center;
+    }
 
-        .package-box h3 {
-            font-size: 1.5rem;
-            color: #00b8d4;
-            margin-bottom: 15px;
-        }
+    .vpn-title {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        color: #00b8d4;
+    }
 
-        .package-box p {
-            font-size: 1rem;
-            color: #ccc;
-            margin-bottom: 15px;
-        }
+    .vpn-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+        color: #ccc;
+    }
 
-        .package-price {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #fff;
-        }
+    .features-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 60px;
+    }
 
-        .cta-button {
-            padding: 15px 30px;
-            background-color: #00b8d4;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+    .feature-box {
+        background-color: #333;
+        border-radius: 10px;
+        padding: 20px;
+        width: 30%;
+    }
 
-        .cta-button:hover {
-            background-color: #007a8a;
-        }
+    .feature-box h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: #00b8d4;
+    }
 
-        /* Pop-up Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            align-items: center;
-            justify-content: center;
-        }
+    .feature-box p {
+        font-size: 1rem;
+        color: #ccc;
+    }
 
-        .modal-content {
-            background-color: #262626;
-            padding: 20px;
-            border-radius: 10px;
-            width: 400px;
-            color: white;
-            text-align: center;
-        }
+    .package-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 60px;
+    }
 
-        .modal-content h2 {
-            color: #00b8d4;
-            margin-bottom: 20px;
-        }
+    .package-box {
+        background-color: #333;
+        border-radius: 10px;
+        padding: 20px;
+        width: 30%;
+        text-align: center;
+    }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+    .package-box h3 {
+        font-size: 1.5rem;
+        color: #00b8d4;
+        margin-bottom: 15px;
+    }
 
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #333;
-            border-radius: 5px;
-            color: #333;
-        }
+    .package-box p {
+        font-size: 1rem;
+        color: #ccc;
+        margin-bottom: 15px;
+    }
 
-        .close-button {
-            background: #00b8d4;
-            border: none;
-            padding: 10px 20px;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    .package-price {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #fff;
+    }
 
-        .switch-button {
-            background: none;
-            border: none;
-            color: #00b8d4;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-    </style>
-</head>
+    .cta-button {
+        padding: 15px 30px;
+        background-color: #00b8d4;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
 
-<body>
+    .cta-button:hover {
+        background-color: #007a8a;
+    }
 
-    <!-- VPN Section -->
-    <section class="vpn-section">
-        <h1 class="vpn-title">Virtual Private Network (VPN)</h1>
-        <p class="vpn-subtitle">Secure your data and enjoy seamless global connectivity.</p>
+    /* Pop-up Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        align-items: center;
+        justify-content: center;
+    }
 
-        <!-- VPN Packages -->
-        <div class="package-container">
-            <div class="package-box">
-                <h3>Essential Plan</h3>
-                <p>10 Mbps Bandwidth</p>
-                <p class="package-price">Rp 100,000 / month</p>
-                <button class="cta-button" onclick="openModal()">Choose Plan</button>
-            </div>
-            <div class="package-box">
-                <h3>Business Plan</h3>
-                <p>100 Mbps Bandwidth</p>
-                <p class="package-price">Rp 300,000 / month</p>
-                <button class="cta-button" onclick="openModal()">Choose Plan</button>
-            </div>
-            <div class="package-box">
-                <h3>Enterprise Plan</h3>
-                <p>500 Mbps Bandwidth</p>
-                <p class="package-price">Rp 1,000,000 / month</p>
-                <button class="cta-button" onclick="openModal()">Choose Plan</button>
+    .modal-content {
+        background-color: #262626;
+        padding: 20px;
+        border-radius: 10px;
+        width: 400px;
+        color: white;
+        text-align: center;
+    }
+
+    .modal-content h2 {
+        color: #00b8d4;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #333;
+        border-radius: 5px;
+        color: #333;
+    }
+
+    .close-button {
+        background: #00b8d4;
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .switch-button {
+        background: none;
+        border: none;
+        color: #00b8d4;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+</style>
+<?= $this->endSection() ?>
+
+
+<?= $this->section('content') ?>
+
+<!-- VPN Section -->
+<div class="hero">
+    <div class="position-relative z-1 container">
+        <div class="row">
+            <div class="col">
+                <h1 class="fw-bold">Elevate your digital<br>
+                    experience to <br>
+                    unprecedented heights</h1>
+                <p class="fs-6 my-3 arcade-interlaced-regular">Explore our innovative, high-quality superior services</p>
+                <a href="#" class="btn">Selengkapnya</a>
             </div>
         </div>
-    </section>
+    </div>
+</div>
+<div class="container my-5">
+    <!-- Header Section -->
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-primary">VPN Service</h1>
+        <p class="lead text-muted">Solusi Virtual Private Network dengan pilihan bandwidth sesuai kebutuhan Anda</p>
+    </div>
 
-    <!-- Modal for Login/Register -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <h2 id="modalTitle">Login</h2>
-            <div id="loginForm">
-                <div class="form-group"><input type="email" placeholder="Email" required></div>
-                <div class="form-group"><input type="password" placeholder="Password" required></div>
-                <button class="close-button" onclick="continueToPurchase()">Login</button>
-                <p>Don't have an account? <button class="switch-button" onclick="showRegister()">Register</button></p>
+    <!-- Features Section -->
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body d-flex">
+                    <div class="icon me-3 text-primary">
+                        <i class="bi bi-graph-up-arrow fs-2"></i>
+                    </div>
+                    <div>
+                        <h5 class="card-title">Monitoring MRTG</h5>
+                        <p class="card-text">Pantau lalu lintas jaringan secara real-time untuk memastikan performa jaringan tetap optimal.</p>
+                    </div>
+                </div>
             </div>
-            <div id="registerForm" style="display: none;">
-                <div class="form-group"><input type="text" placeholder="Full Name" required></div>
-                <div class="form-group"><input type="email" placeholder="Email" required></div>
-                <div class="form-group"><input type="password" placeholder="Password" required></div>
-                <div class="form-group"><input type="password" placeholder="Repeat Password" required></div>
-                <button class="close-button" onclick="continueToPurchase()">Register</button>
-                <p>Already have an account? <button class="switch-button" onclick="showLogin()">Login</button></p>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body d-flex">
+                    <div class="icon me-3 text-primary">
+                        <i class="bi bi-headset fs-2"></i>
+                    </div>
+                    <div>
+                        <h5 class="card-title">Dukungan Teknis 24/7</h5>
+                        <p class="card-text">Tim teknis kami selalu siap membantu Anda kapan pun dibutuhkan, memastikan layanan berjalan lancar.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <script>
-        function openModal() {
-            document.getElementById("loginModal").style.display = "flex";
-            showLogin();
-        }
+    <!-- Image and CTA Section -->
+    <div class="row my-5 align-items-center">
+        <div class="col-md-6">
+            <img src="assets/img/vpn-services/vpn.png" class="img-fluid rounded shadow" alt="VPN Service Image">
+        </div>
+        <div class="col-md-6">
+            <h3 class="fw-semibold text-primary">Keamanan dan Privasi Terjamin</h3>
+            <p class="text-muted">Layanan VPN kami ideal untuk menjaga data Anda tetap aman, meningkatkan kecepatan akses, dan memberikan fleksibilitas dalam mengelola aktivitas jaringan di berbagai lokasi.</p>
+        </div>
+    </div>
+</div>
 
-        function closeModal() {
-            document.getElementById("loginModal").style.display = "none";
-        }
+<section class="container py-5">
+    <div class="row text-center mb-5">
+        <h2>Paket VPN Service + High Speed Internet Access</h2>
+    </div>
+    <div class="row">
 
-        function showLogin() {
-            document.getElementById("modalTitle").textContent = "Login";
-            document.getElementById("loginForm").style.display = "block";
-            document.getElementById("registerForm").style.display = "none";
-        }
+        <!-- Paket Basic Secure Internet -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-primary">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-primary">Paket Basic Secure Internet</h5>
+                    <p class="card-text"><strong>VPN Service:</strong></p>
+                    <ul>
+                        <li>Enkripsi AES-256 untuk keamanan dasar</li>
+                        <li>Multi-device support hingga 2 perangkat</li>
+                    </ul>
+                    <p class="card-text"><strong>High Speed Internet Access:</strong></p>
+                    <ul>
+                        <li>Kecepatan internet hingga 50 Mbps (shared)</li>
+                    </ul>
+                    <p class="card-text"><strong>Support:</strong> 24/7 via email</p>
+                    <p class="card-text"><strong>Fitur Tambahan:</strong></p>
+                    <ul>
+                        <li>Monitoring bandwidth dengan MRTG</li>
+                        <li>Akses aman ke jaringan perusahaan dari lokasi mana saja</li>
+                    </ul>
+                    <h5 class="text-primary">Harga: IDR X / bulan</h5>
+                    <button class="btn btn-primary mt-auto w-100" onclick="openModal()" >Beli Paket</button>
+                </div>
+            </div>
+        </div>
 
-        function showRegister() {
-            document.getElementById("modalTitle").textContent = "Register";
-            document.getElementById("loginForm").style.display = "none";
-            document.getElementById("registerForm").style.display = "block";
-        }
+        <!-- Paket Business Secure Internet -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-success">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-success">Paket Business Secure Internet</h5>
+                    <p class="card-text"><strong>VPN Service:</strong></p>
+                    <ul>
+                        <li>Enkripsi AES-256 dengan IPSec untuk keamanan tambahan</li>
+                        <li>Dukungan hingga 10 perangkat per akun</li>
+                        <li>Static IP untuk akses stabil</li>
+                    </ul>
+                    <p class="card-text"><strong>High Speed Internet Access:</strong></p>
+                    <ul>
+                        <li>Kecepatan internet hingga 100 Mbps (dedicated)</li>
+                    </ul>
+                    <p class="card-text"><strong>Support:</strong> 24/7 via email dan chat</p>
+                    <p class="card-text"><strong>Fitur Tambahan:</strong></p>
+                    <ul>
+                        <li>Firewall management</li>
+                        <li>QoS untuk memastikan bandwidth prioritas</li>
+                    </ul>
+                    <h5 class="text-success">Harga: IDR Y / bulan</h5>
+                    <button class="btn btn-primary mt-auto w-100" onclick="openModal()" >Beli Paket</button>
+                </div>
+            </div>
+        </div>
 
-        function continueToPurchase() {
-            closeModal();
-            alert("Redirecting to purchase form...");
-            // Redirect to purchase form page here
-        }
-    </script>
+        <!-- Paket Enterprise Secure Internet -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-danger">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-danger">Paket Enterprise Secure Internet</h5>
+                    <p class="card-text"><strong>VPN Service:</strong></p>
+                    <ul>
+                        <li>Enkripsi AES-256 dengan IPSec dan SSL/TLS</li>
+                        <li>Support multi-device hingga 50 perangkat</li>
+                        <li>Integrasi dengan Active Directory</li>
+                        <li>Dedicated VPN server dan Static IP block</li>
+                    </ul>
+                    <p class="card-text"><strong>High Speed Internet Access:</strong></p>
+                    <ul>
+                        <li>Kecepatan internet hingga 300 Mbps (dedicated)</li>
+                    </ul>
+                    <p class="card-text"><strong>Support:</strong> 24/7 priority support, SLA uptime 99.9%</p>
+                    <p class="card-text"><strong>Fitur Tambahan:</strong></p>
+                    <ul>
+                        <li>DDoS protection</li>
+                        <li>Network monitoring real-time dengan MRTG</li>
+                        <li>Traffic prioritization dan VLAN untuk isolasi jaringan</li>
+                    </ul>
+                    <h5 class="text-danger">Harga: IDR Z / bulan</h5>
+                    <button class="btn btn-primary mt-auto w-100" onclick="openModal()" >Beli Paket</button>
+                </div>
+            </div>
+        </div>
 
-</body>
+    </div>
+</section>
 
-</html>
+
+
+<?= $this->endSection() ?>

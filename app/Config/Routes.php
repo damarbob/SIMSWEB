@@ -37,6 +37,8 @@ $routes->get('/pay_tv_services', 'Service::pay_tv_services');
 $routes->get('/high_speed_internet_access', 'Service::high_speed_internet_access');
 $routes->get('/vpn_services', 'Service::vpn_services');
 $routes->get('/bts_hotel', 'Service::bts_hotel');
+$routes->get('/vsat', 'Service::vsat');
+$routes->get('/training', 'Service::training');
 $routes->get('/dark_viber_connection', 'Service::dark_viber_connection');
 $routes->get('/data_center', 'Service::data_center');
 $routes->get('/experience', 'Experience::experience');
@@ -45,7 +47,6 @@ $routes->get('/blog', 'Blog::blog');
 $routes->get('/blog_item', 'Blog::blog_item');
 $routes->get('/contact_us', 'ContactUs::contact_us');
 
-$routes->get('/vpn_services/form', 'Service::vpn_form'); // Tambahkan rute ini
 
 /*
  * --------------------------------------------------------------------

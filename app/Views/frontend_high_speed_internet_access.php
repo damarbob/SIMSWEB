@@ -334,6 +334,25 @@
             margin-bottom: 30px;
         }
     }
+    .card {
+            border: none; /* Menghilangkan garis pada kartu */
+            display: flex; /* Menggunakan flexbox */
+            flex-direction: column; /* Mengatur arah kolom */
+            height: 100%; /* Mengatur tinggi kartu 100% dari kolom */
+        }
+        .card-body {
+            flex-grow: 1; /* Memungkinkan body kartu untuk mengisi ruang yang tersedia */
+            padding-bottom: 20px; /* Memberikan padding di bawah */
+        }
+        .card-footer {
+            text-align: center; /* Menyusun teks footer di tengah */
+        }
+        .card:hover {
+            transform: scale(1.05); /* Efek zoom saat hover */
+        }
+        .btn {
+            width: 100%; /* Mengatur lebar tombol agar memenuhi ruang footer */
+        }
 </style>
 <?= $this->endSection() ?>
 
@@ -386,6 +405,72 @@
     </div>
 </section>
 
+<div class="container mt-5">
+        <h1 class="text-center">Paket High Speed Internet</h1>
+
+        <div class="row mt-4 d-flex align-items-stretch">
+            <!-- Paket Dasar -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Paket Dasar</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">Harga: Rp 300.000/bulan</h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Kecepatan: 10 Mbps</li>
+                            <li class="list-group-item">Koneksi: Shared (FTTH)</li>
+                            <li class="list-group-item">Layanan: Pre-Paid</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                    <button class="btn btn-primary mt-auto w-100" onclick="openModal()" >Beli Paket</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paket Menengah -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Paket Menengah</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">Harga: Rp 500.000/bulan</h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Kecepatan: 25 Mbps</li>
+                            <li class="list-group-item">Koneksi: Shared (FTTH)</li>
+                            <li class="list-group-item">Layanan: Post-Paid</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                    <button class="btn btn-primary mt-auto w-100" onclick="openModal()" >Beli Paket</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paket Premium -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Paket Premium</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">Harga: Rp 1.000.000/bulan</h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Kecepatan: 100 Mbps</li>
+                            <li class="list-group-item">Koneksi: Dedicated (Optical Fiber)</li>
+                            <li class="list-group-item">Layanan: Post-Paid</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                    <button class="btn btn-primary mt-auto w-100" onclick="openModal()" >Beli Paket</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <!-- Testimonial Section -->
 <section class="testimonial-section">
