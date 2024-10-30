@@ -265,7 +265,7 @@
                 <h3 style="font-size: 1rem; margin-bottom: 5px;">Extensive</h3>
             </div>
         </div>
-        <div class="separator-line rounded-1" style="width: 50%; margin: 15px auto;"></div>
+        <!-- <div class="separator-line rounded-1" style="width: 50%; margin: 15px auto;"></div> -->
         <section class="darker-grotesque-regular" style="font-size: 0.9rem; line-height: 1.4;">
             <p>Our Pay TV Services leverage leading FTTH</p>
             <br>
@@ -277,10 +277,10 @@
 </section>
 <section>
     <div class="container-fluid">
-        <div class="separator-arrow-down-subtractive align-self-end" ></div>
+        <!-- <div class="separator-arrow-down-subtractive align-self-end" ></div> -->
         <div class="row">
             <div class="col-sm-6 p-0">
-                <div class="separator-wave"></div>
+                <!-- <div class="separator-wave"></div> -->
                 <img src="<?= base_url('assets/img/Frame.png') ?>" alt="Frame" class="w-100 h-100 object-fit-cover">
             </div>
             <div class="col-sm-6 d-flex align-items-center justify-content-center bg-white">

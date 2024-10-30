@@ -23,7 +23,7 @@
         position: relative;
         width: 100%;
         height: 100vh;
-        background-image: url('<?=base_url('assets/img/Blog/Frame Blog.png') ?>');
+        background-image: url('<?= base_url('assets/img/Blog/Frame Blog.png') ?>');
         background-size: cover;
         background-position: center;
         color: white;
@@ -130,7 +130,7 @@
                     <p class="chakra-petch-bold"> 1st May 2024</p>
                     <h1>PT SIMS has become the tenth decacorn company in Indonesia</h1>
                     <p class="chakra-petch-bold">Digital TV service employs FTTH (fiber To The Home) technology and offers numerous Free To Air and Premium channels.</p>
-                    <a href="#" class="btn btn-outline-light btn-lg chakra-petch-medium" data-mdb-ripple-init>Selengkapnya</a>
+                    <a href="<?= base_url('blog_item'); ?>" class="btn btn-outline-light btn-lg chakra-petch-medium" data-mdb-ripple-init>Selengkapnya</a>
                 </div>
             </div>
         </div>
@@ -183,7 +183,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card shadow rounded-0" style="width: 100%;">                        
+                <div class="card shadow rounded-0" style="width: 100%;">
                     <img class="card-img-top rounded-0" src="<?= base_url('assets/img/Blog/Media 3.png') ?>" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">PT SIMS Bekerja Sama dengan Harvard Univ...</h5>

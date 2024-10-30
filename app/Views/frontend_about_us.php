@@ -142,8 +142,6 @@
         background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
         pointer-events: none;
     }
-
-    
 </style>
 <?= $this->endSection() ?>
 
@@ -187,17 +185,20 @@
         </div>
     </div>
 </section>
-
 <section>
     <div class="container-fluid p-0 position-relative">
         <div class="row">
             <div class="col">
                 <div class="position-relative">
-                    <img src=" <?= base_url("assets/img/about-us/image 39.png") ?>" alt="About Us Image" class="img-fluid w-100" style="object-fit: cover;">
+                    <!-- Gambar Latar -->
+                    <img src="<?= base_url("assets/img/about-us/image 39.png") ?>" alt="About Us Image" class="img-fluid w-100" style="object-fit: cover; height: 100vh;">
+
                     <!-- Gradient overlay -->
-                    <div class="gradient-overlay"></div>
-                    <div class="text-overlay position-absolute bottom-0 start-0 w-100" style="height: 30%; margin-bottom : 100px;">
-                        <div class="container text-white" style="max-width: 800px; z-index:4;">
+                    <div class="gradient-overlay position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0)); z-index: 1;"></div>
+
+                    <!-- Teks Overlay -->
+                    <div class="text-overlay position-absolute bottom-0 start-0 w-100" style="height: auto; padding-bottom: 100px; z-index: 2;">
+                        <div class="container text-white" style="max-width: 800px;">
                             <h1 class="subtitle text-white chakra-petch-bold" style="text-align: start; margin-bottom:40px;">The basic configuration of the Jogja Medianet HFC network</h1>
                             <p class="subtitle text-white chakra-petch-regular" style="text-align: start;">
                                 In January 2002, during the ATF (Asean Tourism Forum) international event held at the Jogja Expo Center (JEC), Jogja Medianet began offering its services.
@@ -218,6 +219,7 @@
         </div>
     </div>
 </section>
+
 
 <div class="row">
     <div class="col">
