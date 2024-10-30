@@ -224,78 +224,146 @@
         </div>
     </div>
 </div>
-    <!-- VPN Packages -->
-     <section class="py-5">
-    <div class="package-container">
-        <div class="package-box">
-            <h3>Essential Plan</h3>
-            <p>10 Mbps Bandwidth</p>
-            <p class="package-price">Rp 100,000 / month</p>
-            <button class="cta-button" onclick="openModal()">Choose Plan</button>
+<div class="container my-5">
+    <!-- Header Section -->
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-primary">VPN Service</h1>
+        <p class="lead text-muted">Solusi Virtual Private Network dengan pilihan bandwidth sesuai kebutuhan Anda</p>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body d-flex">
+                    <div class="icon me-3 text-primary">
+                        <i class="bi bi-graph-up-arrow fs-2"></i>
+                    </div>
+                    <div>
+                        <h5 class="card-title">Monitoring MRTG</h5>
+                        <p class="card-text">Pantau lalu lintas jaringan secara real-time untuk memastikan performa jaringan tetap optimal.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="package-box">
-            <h3>Business Plan</h3>
-            <p>100 Mbps Bandwidth</p>
-            <p class="package-price">Rp 300,000 / month</p>
-            <button class="cta-button" onclick="openModal()">Choose Plan</button>
-        </div>
-        <div class="package-box">
-            <h3>Enterprise Plan</h3>
-            <p>500 Mbps Bandwidth</p>
-            <p class="package-price">Rp 1,000,000 / month</p>
-            <button class="cta-button" onclick="openModal()">Choose Plan</button>
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body d-flex">
+                    <div class="icon me-3 text-primary">
+                        <i class="bi bi-headset fs-2"></i>
+                    </div>
+                    <div>
+                        <h5 class="card-title">Dukungan Teknis 24/7</h5>
+                        <p class="card-text">Tim teknis kami selalu siap membantu Anda kapan pun dibutuhkan, memastikan layanan berjalan lancar.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</section>
 
-<!-- Modal for Login/Register -->
-<div id="loginModal" class="modal">
-    <div class="modal-content">
-        <h2 id="modalTitle">Login</h2>
-        <div id="loginForm">
-            <div class="form-group"><input type="email" placeholder="Email" required></div>
-            <div class="form-group"><input type="password" placeholder="Password" required></div>
-            <button class="close-button" onclick="continueToPurchase()">Login</button>
-            <p>Don't have an account? <button class="switch-button" onclick="showRegister()">Register</button></p>
+    <!-- Image and CTA Section -->
+    <div class="row my-5 align-items-center">
+        <div class="col-md-6">
+            <img src="assets/img/vpn-services/vpn.png" class="img-fluid rounded shadow" alt="VPN Service Image">
         </div>
-        <div id="registerForm" style="display: none;">
-            <div class="form-group"><input type="text" placeholder="Full Name" required></div>
-            <div class="form-group"><input type="email" placeholder="Email" required></div>
-            <div class="form-group"><input type="password" placeholder="Password" required></div>
-            <div class="form-group"><input type="password" placeholder="Repeat Password" required></div>
-            <button class="close-button" onclick="continueToPurchase()">Register</button>
-            <p>Already have an account? <button class="switch-button" onclick="showLogin()">Login</button></p>
+        <div class="col-md-6">
+            <h3 class="fw-semibold text-primary">Keamanan dan Privasi Terjamin</h3>
+            <p class="text-muted">Layanan VPN kami ideal untuk menjaga data Anda tetap aman, meningkatkan kecepatan akses, dan memberikan fleksibilitas dalam mengelola aktivitas jaringan di berbagai lokasi.</p>
         </div>
     </div>
 </div>
 
-<script>
-    function openModal() {
-        document.getElementById("loginModal").style.display = "flex";
-        showLogin();
-    }
+<section class="container py-5">
+    <div class="row text-center mb-5">
+        <h2>Paket VPN Service + High Speed Internet Access</h2>
+    </div>
+    <div class="row">
 
-    function closeModal() {
-        document.getElementById("loginModal").style.display = "none";
-    }
+        <!-- Paket Basic Secure Internet -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-primary">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-primary">Paket Basic Secure Internet</h5>
+                    <p class="card-text"><strong>VPN Service:</strong></p>
+                    <ul>
+                        <li>Enkripsi AES-256 untuk keamanan dasar</li>
+                        <li>Multi-device support hingga 2 perangkat</li>
+                    </ul>
+                    <p class="card-text"><strong>High Speed Internet Access:</strong></p>
+                    <ul>
+                        <li>Kecepatan internet hingga 50 Mbps (shared)</li>
+                    </ul>
+                    <p class="card-text"><strong>Support:</strong> 24/7 via email</p>
+                    <p class="card-text"><strong>Fitur Tambahan:</strong></p>
+                    <ul>
+                        <li>Monitoring bandwidth dengan MRTG</li>
+                        <li>Akses aman ke jaringan perusahaan dari lokasi mana saja</li>
+                    </ul>
+                    <h5 class="text-primary">Harga: IDR X / bulan</h5>
+                    <button class="btn btn-primary mt-auto w-100" onclick="openModal()" >Beli Paket</button>
+                </div>
+            </div>
+        </div>
 
-    function showLogin() {
-        document.getElementById("modalTitle").textContent = "Login";
-        document.getElementById("loginForm").style.display = "block";
-        document.getElementById("registerForm").style.display = "none";
-    }
+        <!-- Paket Business Secure Internet -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-success">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-success">Paket Business Secure Internet</h5>
+                    <p class="card-text"><strong>VPN Service:</strong></p>
+                    <ul>
+                        <li>Enkripsi AES-256 dengan IPSec untuk keamanan tambahan</li>
+                        <li>Dukungan hingga 10 perangkat per akun</li>
+                        <li>Static IP untuk akses stabil</li>
+                    </ul>
+                    <p class="card-text"><strong>High Speed Internet Access:</strong></p>
+                    <ul>
+                        <li>Kecepatan internet hingga 100 Mbps (dedicated)</li>
+                    </ul>
+                    <p class="card-text"><strong>Support:</strong> 24/7 via email dan chat</p>
+                    <p class="card-text"><strong>Fitur Tambahan:</strong></p>
+                    <ul>
+                        <li>Firewall management</li>
+                        <li>QoS untuk memastikan bandwidth prioritas</li>
+                    </ul>
+                    <h5 class="text-success">Harga: IDR Y / bulan</h5>
+                    <button class="btn btn-primary mt-auto w-100" onclick="openModal()" >Beli Paket</button>
+                </div>
+            </div>
+        </div>
 
-    function showRegister() {
-        document.getElementById("modalTitle").textContent = "Register";
-        document.getElementById("loginForm").style.display = "none";
-        document.getElementById("registerForm").style.display = "block";
-    }
+        <!-- Paket Enterprise Secure Internet -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-danger">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-danger">Paket Enterprise Secure Internet</h5>
+                    <p class="card-text"><strong>VPN Service:</strong></p>
+                    <ul>
+                        <li>Enkripsi AES-256 dengan IPSec dan SSL/TLS</li>
+                        <li>Support multi-device hingga 50 perangkat</li>
+                        <li>Integrasi dengan Active Directory</li>
+                        <li>Dedicated VPN server dan Static IP block</li>
+                    </ul>
+                    <p class="card-text"><strong>High Speed Internet Access:</strong></p>
+                    <ul>
+                        <li>Kecepatan internet hingga 300 Mbps (dedicated)</li>
+                    </ul>
+                    <p class="card-text"><strong>Support:</strong> 24/7 priority support, SLA uptime 99.9%</p>
+                    <p class="card-text"><strong>Fitur Tambahan:</strong></p>
+                    <ul>
+                        <li>DDoS protection</li>
+                        <li>Network monitoring real-time dengan MRTG</li>
+                        <li>Traffic prioritization dan VLAN untuk isolasi jaringan</li>
+                    </ul>
+                    <h5 class="text-danger">Harga: IDR Z / bulan</h5>
+                    <button class="btn btn-primary mt-auto w-100" onclick="openModal()" >Beli Paket</button>
+                </div>
+            </div>
+        </div>
 
-    function continueToPurchase() {
-        closeModal();
-        alert("Redirecting to purchase form...");
-        // Redirect to purchase form page here
-    }
-</script>
+    </div>
+</section>
+
+
 
 <?= $this->endSection() ?>

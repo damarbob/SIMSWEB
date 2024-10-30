@@ -140,6 +140,26 @@
         font-size: 40px; /* Ukuran teks lebih kecil untuk mobile */
     }
 }
+
+.card {
+            border: none; /* Menghilangkan garis pada kartu */
+            display: flex; /* Menggunakan flexbox */
+            flex-direction: column; /* Mengatur arah kolom */
+            height: 100%; /* Mengatur tinggi kartu 100% dari kolom */
+        }
+        .card-body {
+            flex-grow: 1; /* Memungkinkan body kartu untuk mengisi ruang yang tersedia */
+            padding-bottom: 20px; /* Memberikan padding di bawah */
+        }
+        .card:hover {
+            transform: scale(1.05); /* Efek zoom saat hover */
+        }
+        .card-footer {
+            text-align: center; /* Menyusun teks footer di tengah */
+        }
+        .btn {
+            width: 100%; /* Mengatur lebar tombol agar memenuhi ruang footer */
+        }
 </style>
 <?= $this->endSection() ?>
 
@@ -209,5 +229,78 @@
             </div>
         </div>
 </section>
+
+<div class="container mt-5">
+        <h1 class="text-center">Paket Data Center</h1>
+
+        <div class="row mt-4 d-flex align-items-stretch">
+            <!-- Paket Dasar -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Paket Dasar</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">Harga: Rp 1.500.000/bulan</h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Server Collocation: 1U</li>
+                            <li class="list-group-item">Perlindungan Genset</li>
+                            <li class="list-group-item">Perlindungan UPS</li>
+                            <li class="list-group-item">Spark Arrester</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                    <button class="btn btn-primary mt-auto w-100" onclick="openModal()" >Beli Paket</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paket Menengah -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Paket Menengah</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">Harga: Rp 2.500.000/bulan</h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Server Collocation: 2U</li>
+                            <li class="list-group-item">Perlindungan Genset</li>
+                            <li class="list-group-item">Perlindungan UPS</li>
+                            <li class="list-group-item">Spark Arrester</li>
+                            <li class="list-group-item">Bandwidth 1 Gbps</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                    <button class="btn btn-primary mt-auto w-100" onclick="openModal()" >Beli Paket</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paket Premium -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Paket Premium</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">Harga: Rp 5.000.000/bulan</h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Server Collocation: 4U</li>
+                            <li class="list-group-item">Perlindungan Genset</li>
+                            <li class="list-group-item">Perlindungan UPS</li>
+                            <li class="list-group-item">Spark Arrester</li>
+                            <li class="list-group-item">Bandwidth 10 Gbps</li>
+                            <li class="list-group-item">Dukungan 24/7</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                    <button class="btn btn-primary mt-auto w-100" onclick="openModal()" >Beli Paket</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 <?= $this->endSection() ?>

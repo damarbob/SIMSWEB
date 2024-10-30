@@ -48,6 +48,62 @@
 
 
     }
+ /* Pop-up Styles */
+ .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-content {
+        background-color: #262626;
+        padding: 20px;
+        border-radius: 10px;
+        width: 400px;
+        color: white;
+        text-align: center;
+    }
+
+    .modal-content h2 {
+        color: #00b8d4;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #333;
+        border-radius: 5px;
+        color: #333;
+    }
+
+    .close-button {
+        background: #00b8d4;
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .switch-button {
+        background: none;
+        border: none;
+        color: #00b8d4;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    
   </style>
 </head>
 
@@ -196,6 +252,56 @@
       },
     });
   </script>
+
+  <!-- Modal for Login/Register -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <h2 id="modalTitle">Login</h2>
+        <div id="loginForm">
+            <div class="form-group"><input type="email" placeholder="Email" required></div>
+            <div class="form-group"><input type="password" placeholder="Password" required></div>
+            <button class="close-button" onclick="continueToPurchase()">Login</button>
+            <p>Don't have an account? <button class="switch-button" onclick="showRegister()">Register</button></p>
+        </div>
+        <div id="registerForm" style="display: none;">
+            <div class="form-group"><input type="text" placeholder="Full Name" required></div>
+            <div class="form-group"><input type="email" placeholder="Email" required></div>
+            <div class="form-group"><input type="password" placeholder="Password" required></div>
+            <div class="form-group"><input type="password" placeholder="Repeat Password" required></div>
+            <button class="close-button" onclick="continueToPurchase()">Register</button>
+            <p>Already have an account? <button class="switch-button" onclick="showLogin()">Login</button></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openModal() {
+        document.getElementById("loginModal").style.display = "flex";
+        showLogin();
+    }
+
+    function closeModal() {
+        document.getElementById("loginModal").style.display = "none";
+    }
+
+    function showLogin() {
+        document.getElementById("modalTitle").textContent = "Login";
+        document.getElementById("loginForm").style.display = "block";
+        document.getElementById("registerForm").style.display = "none";
+    }
+
+    function showRegister() {
+        document.getElementById("modalTitle").textContent = "Register";
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("registerForm").style.display = "block";
+    }
+
+    function continueToPurchase() {
+        closeModal();
+        alert("Redirecting to purchase form...");
+        // Redirect to purchase form page here
+    }
+</script>
 
 </body>
 

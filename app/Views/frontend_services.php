@@ -566,7 +566,8 @@
                 <p>Very Small Aperture Terminal (VSAT) service is a solution to accommodatatelecomunications needs in areas notcovered
                     by terrestrial networks for the needs of users with fixed, Maving or Mobile locations
                 </p>
-                <button class="more-btn">Selengkapnya</button>
+               
+                <a href="<?= base_url('vsat'); ?>" class="more-btn">Selengkapnya</a>
             </div>
         </div>
 
@@ -580,7 +581,7 @@
                 <p>including training and mentoring services for increasing the capacity of MSMEa in the digital era in order to expand the impact of the digital acosystem</p>
 
                 </p>
-                <button class="more-btn">Selengkapnya</button>
+                <a href="<?= base_url('training'); ?>" class="more-btn">Selengkapnya</a>
             </div>
         </div>
 
